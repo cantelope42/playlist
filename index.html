@@ -529,10 +529,10 @@
       ]
 
 
-      tracks.map((v,i)=> {
-        v.map((q,j)=>{
+      tracks = tracks.map((v,i)=> {
+        return v.map((q,j)=>{
           prefix = `https://cantelope42.github.io/roadtrip${i+1}/tracks/`
-          q = prefix + encodeURIComponent(v)
+          return prefix + encodeURIComponent(v)
         })
       })
 
