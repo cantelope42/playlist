@@ -448,13 +448,13 @@
       }
       
       playTrack=idx=>{
-        let src = 'https://audioplayer.whitehot.ninja/index.html?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
+        let src = 'https://cantelope42.github.io/audioplayer_github/index.html?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
         console.log(idx, userInteracted, src)
         let el
         (el = document.querySelectorAll('.playerFrame')[0])
         preloadNext()
         postMessage(JSON.stringify({'userInteracted': userInteracted}))
-        el.src = 'https://audioplayer.whitehot.ninja/index.html?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
+        el.src = 'https://cantelope42.github.io/audioplayer_github/index.html?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
       }
       
       curIDX = 0
