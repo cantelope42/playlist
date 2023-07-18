@@ -529,13 +529,18 @@
       ]
 
 
-	    tracks.map((v,i)=> {
+      tracks.map((v,i)=> {
         v.map((q,j)=>{
           prefix = `https://cantelope42.github.io/roadtrip${i+1}/tracks/`
           q = prefix + encodeURIComponent(v)
         })
       })
 
+      a = []
+      tracks = tracks.map(v=>{
+        a=[...a, ...v]
+      })
+      tracks = a
 
       vid = document.createElement('video')
       vid.style.position = 'absolute'
