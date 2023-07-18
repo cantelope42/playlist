@@ -423,7 +423,7 @@
       preloadNext=()=>{
         setTimeout(()=>{
           nextRnd = shuffle? Rn()*tracks.length|0 : (curIDX + 1)%tracks.length
-          let nextTrackName=decodeURI(tracks[nextRnd].replace('tracks/',''))
+          let nextTrackName=decodeURI((l=tracks[nextRnd].split)('/')[l.length-1])
           let t=0
           let loadingTimer = setInterval(()=>{
             bufferedTrack.innerHTML='<span style="color: #afc;font-weight: 900;">next track:</span>'+" <span style=\"color: #aaa;font-weight: 900;\">(buffering"+('.'.repeat(t%8))+('&nbsp;'.repeat(8-(t%8)))+")</span>"+'<br>'+('&nbsp;'.repeat(4))+'<span class="bufferTrackTitle">'+nextTrackName+'</span>'
@@ -468,7 +468,8 @@
           tb.onclick = () =>{
             playTrack(curIDX = i)
           }
-          tb.innerHTML = decodeURI(v.replace('tracks/', '')) + '<br>'
+          tb.innerHTML = decodeURI((l=tracks[nextRnd].split)('/')[l.length-1])
+	  //tb.innerHTML = decodeURI(v.replace('tracks/', '')) + '<br>'
           trackDiv.appendChild(tb)
           let db = document.createElement('button')
           db.className = 'deleteButton'
