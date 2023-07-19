@@ -251,7 +251,7 @@
     </style>
   </head>
   <body>
-    <div class="headerLogo" onclick="window.location.href='/public_playlists'" title="go to homepage"></div>
+	  <!-- <div class="headerLogo" onclick="window.location.href='/public_playlists'" title="go to homepage"></div> -->
     <div class="bg_overlay"></div>
     <div id="addTrackModal" class="modal">
       <input
@@ -282,7 +282,7 @@
         <input type="checkbox" checked id="shuffle" oninput="toggleShuffle(this)">
         shuffle
       </label>
-      <button onclick="showModal('#addTrackModal')" class="normalButtons">add track(s)</button>
+      <!-- <button onclick="showModal('#addTrackModal')" class="normalButtons">add track(s)</button> -->
       <br><br>
       <div id="iframeDiv">
         <iframe
@@ -448,13 +448,13 @@
       }
       
       playTrack=idx=>{
-        let src = 'https://cantelope42.github.io/audioplayer_github/index.html?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
+        let src = 'https://cantelope42.github.io/audioplayer_github/?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
         console.log(idx, userInteracted, src)
         let el
         (el = document.querySelectorAll('.playerFrame')[0])
         preloadNext()
         postMessage(JSON.stringify({'userInteracted': userInteracted}))
-        el.src = 'https://cantelope42.github.io/audioplayer_github/index.html?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
+        el.src = 'https://cantelope42.github.io/audioplayer_github/?i=' + tracks[idx] + (userInteracted ? '?autoplay' : '')
       }
       
       curIDX = 0
@@ -489,7 +489,7 @@
       }
 
       console.log('attempting to set message listener')
-	    window.addEventListener('message', e => {
+     window.addEventListener('message', e => {
 
         console.log('received message from audioplayer:',e)
         const key = e.message ? 'message' : 'data';
