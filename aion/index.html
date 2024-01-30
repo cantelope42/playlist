@@ -279,7 +279,7 @@
     <div class="main">
       <br>
       <label for="shuffle">
-        <input type="checkbox" checked id="shuffle" oninput="toggleShuffle(this)">
+        <input type="checkbox" id="shuffle" oninput="toggleShuffle(this)">
         shuffle
       </label>
       <!-- <button onclick="showModal('#addTrackModal')" class="normalButtons">add track(s)</button> -->
@@ -303,7 +303,7 @@
       let iframeDiv = document.querySelector('#iframeDiv')
       let buffer_el = ''
       let nextRnd
-      let shuffle = true
+      let shuffle = false
       let exact = false
       let allWords = true      
       let bufferedTrack=document.querySelector('#bufferedTrack')
